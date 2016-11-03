@@ -13,6 +13,9 @@ Percona Toolkit is developed and supported by Percona Inc.  For more
 information and other free, open-source software developed by Percona,
 visit [http://www.percona.com/software/](http://www.percona.com/software/).
 
+##Note - Fork Reason 
+The reason pt-table-sync was modified was that it requires the ability to change the MySQL variable 'binlog_format' to 'STATEMENT' with the SUPER permission [ binlog_format = STATEMENT]. Unfortunately RDS does not support 'binlog_format = STATEMENT', only 'ROW' and 'MIXED'. To bypass the issue with changing the 'binlog_format' variable, the code has removed the 'binlog_format' check.
+
 ##Installing
 
 To install all tools, run:
